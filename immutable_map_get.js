@@ -1,7 +1,7 @@
 const test = require('./testRunner');
 const Immutable = require('immutable');
 
-test('compare Immutable.Map and Object property accessing', (compare) => {
+test('compare Immutable.Map.get and Object property accessing', (compare) => {
     const map = Immutable.Map({ a: 'a' });
     const getAFromMap = () => map.get('a');
     const obj = { a: 'a' };
@@ -12,7 +12,7 @@ test('compare Immutable.Map and Object property accessing', (compare) => {
     compare(100000, getAFromMap, getAFromObj);
 });
 
-test('compare Immutable.Map and Object property accessing in nested object case', (compare) => {
+test('compare Immutable.Map.get and Object property accessing in nested object case', (compare) => {
     const map = Immutable.fromJS({ a: { b: { c: 'c' } } });
     const getAFromMap = () => map.get('a').get('b').get('c');
     const obj = { a: { b: { c: 'c' } } };
