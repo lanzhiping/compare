@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "build": "webpack -p"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "immutable": "^3.8.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
   }
 }

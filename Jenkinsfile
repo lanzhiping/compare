@@ -9,22 +9,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Start building the project'
                 sh 'npm install'
+                sh 'npm run test'
+                sh 'npm run build'
             }
         }
 
-        stage('Test') {
+        stage('Deploy') {
             steps {
-                echo 'Start run tests'
-                sh 'npm run test'
+                sh 'bash push.sh'
             }
         }
     }
 
     post {
         always {
-            echo 'One way or another, I have finished'
+            echo 'One way or another, I have finished.'
             deleteDir() /* clean up our workspace */
         }
         success {
