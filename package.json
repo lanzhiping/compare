@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js",
-    "build": "webpack -p"
+    "test": "node ./src/test.js",
+    "build": "webpack -p",
+    "deploy": "gulp deploy"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,8 @@
     "immutable": "^3.8.2"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rsync": "0.0.8",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8"
   }
